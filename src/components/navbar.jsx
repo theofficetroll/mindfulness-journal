@@ -9,6 +9,11 @@ const Navbar = () => {
           Home
         </span>
       </Link>
+      <Link className='rapid-log' to='/rapid'>
+        <span className='rapid'>
+          Rapid Log
+        </span>
+      </Link>
     </div>
   )
 }
