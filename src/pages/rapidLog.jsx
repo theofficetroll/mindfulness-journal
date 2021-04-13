@@ -1,15 +1,19 @@
 import React from 'react';
 import Navbar from '../components/navbar.jsx';
+import useRapid from '../helpers/customHooks.js';
 
 const RapidLog = () => {
+  const { inputs, handleInputChange, handleSubmit } = useRapid();
+
   return(
     <div>
       <Navbar />
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <label>Rapid Log Entry</label>
-            <input type='text' name='entry' required />
+            <input type='text' name='entry' onChange={handleInputChange} value={inputs.entry} required />
+            <button type='submit'>Done</button>
           </div>
         </form>
       </div>
