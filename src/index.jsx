@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Today from './components/today.jsx';
+import { BrowserRouter, Route, Switch } from 'react-router';
+import Home from './pages/home';
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
-      <div className="container" >
-        <Today />
-      </div>
+      <BrowserRouter>
+        <div className='container'>
+          <Switch>
+            <Route path="/" component={Home} exact={true} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     )
   }
 };
