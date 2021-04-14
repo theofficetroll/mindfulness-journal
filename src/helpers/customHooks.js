@@ -7,9 +7,27 @@ const useRapid = (cb) => {
     if(e) {
       e.preventDefault();
     }
-    // Send to wherever we're keeping entries
-    console.log('entry saved!');
-    setInputs((inputs) => ({...inputs, entry: ''}));
+    // TODO generalize posting function
+    fetch(`http://localhost:3000/rapid`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(inputs)
+    })
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      console.log('Entry added!');
+      return res;
+    })
+    .then(data => {
+      setInputs(inputs => ({ entry: '' }));
+    })
+    .catch(error => {
+      console.log('Error received', error);
+    })
   }
 
   const handleInputChange = (e) => {

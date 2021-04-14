@@ -1,10 +1,6 @@
 ## Journal
 Online daily mindfulness journal
 
-## Server
-For testing, using json-server.
-This will be replaced with either local storage or a database before production.
-
 ## Usage
 
 To build bundle, in terminal: "npm run build"
