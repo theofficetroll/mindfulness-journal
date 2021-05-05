@@ -30,9 +30,14 @@ const useRapid = (cb) => {
     })
   }
 
+  // TODO
+  // Move date chunk to herlper function
+  // Consider changing date format to include timestamp
+
   const handleInputChange = (e) => {
     e.persist();
-    setInputs((inputs) => ({...inputs, [e.target.name]: e.target.value}));
+    let currentDate = new Date();
+    setInputs((inputs) => ({...inputs, [e.target.name]: e.target.value, date: currentDate}));
   }
 
   return {

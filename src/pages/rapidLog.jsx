@@ -4,7 +4,6 @@ import useRapid from '../helpers/customHooks.js';
 
 // TODO
 // Add keywords, type
-// Log date
 // Add keyboard shortcuts for type
 
 const RapidLog = () => {
