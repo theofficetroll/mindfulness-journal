@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import EntryList from '../components/entryList.jsx';
 import Navbar from '../components/navbar.jsx';
+import { useDaily } from '../helpers/customHooks.js';
 
 // TODO
 // Consider if I want to group the entries by type
 
 const Daily = () => {
-  const [ entries, setEntries ] = useState({});
+  const { entries } = useDaily();
 
   // TODO
   // Add hook to pull entries from db into entries object
+
+
 
   return (
     <div>

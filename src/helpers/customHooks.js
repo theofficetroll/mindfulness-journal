@@ -1,4 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+const useDaily = (cb) => {
+  const [ entries, setEntries ] = useState({ entries: {} });
+
+  return {
+    entries,
+  };
+};
+
+const useFetch = (url) => {
+  const [status, setStatus] = useState('idle');
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    if (!url) return;
+    const fetchData = async() => {
+      setStatus('fetching');
+      const response = await fetch(url);
+      const data = await response.json();
+      setData(data);
+      setStatus('fetched');
+    };
+
+  fetchData();
+  }, [url]);
+
+  return { status, data };
+}
 
 const useRapid = (cb) => {
   const [ inputs, setInputs ] = useState({ entry: '' });
@@ -31,7 +59,6 @@ const useRapid = (cb) => {
   }
 
   // TODO
-  // Move date chunk to herlper function
   // Consider changing date format to include timestamp
 
   const handleInputChange = (e) => {
@@ -47,4 +74,8 @@ const useRapid = (cb) => {
   };
 }
 
-export default useRapid;
+export {
+  useRapid,
+  useDaily,
+  useFetch,
+};

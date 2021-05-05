@@ -4,7 +4,7 @@ import Entry from './entry.jsx';
 const EntryList = ({ entries }) => {
   return (
     <div className='entry'>
-      WIP
+      ${entries}
     </div>
   )
 }
