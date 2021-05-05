@@ -17,6 +17,7 @@ exports.add = (req, res) => {
   Entry.create(entryData)
   .then(entryData => {
     res.status(201).send('New entry successfully added');
+    console.log('entry saved');
   })
   .catch(err => {
     res.status(500).send(err);
