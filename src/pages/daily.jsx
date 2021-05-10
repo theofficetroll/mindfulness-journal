@@ -10,8 +10,7 @@ const Daily = () => {
 
   // TODO
   // Organize entries in different ways?
-  // Edit date to show only relevent data
-  // Show Date somewhere
+  // Only show entries timestamped today
 
   const res = useFetch(`http://localhost:3000/rapid`);
   const data = res.data;
@@ -24,10 +23,17 @@ const Daily = () => {
 
   let entries = [];
   let timeStamp = '';
+  let dateStamp = '';
 
   for (let j = 0; j < data.length; j++) {
     if (data[j].entry) {
-      timeStamp = data[j].date;
+      dateStamp = data[j].date;
+      if(dateStamp) {
+        timeStamp = dateStamp.slice(11, 16);
+      } else {
+        timeStamp = '';
+      }
+      // timeStamp = dateStamp.slice(9, 14);
       entries.push(
         <Entry key={j} entry={data[j].entry} time={timeStamp} />
       )
