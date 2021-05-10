@@ -1,25 +1,36 @@
 import React from 'react';
-import EntryList from '../components/entryList.jsx';
+import Entry from '../components/entry.jsx';
 import Navbar from '../components/navbar.jsx';
-import { useDaily } from '../helpers/customHooks.js';
+import { useDaily, useFetch } from '../helpers/customHooks.js';
 
 // TODO
 // Consider if I want to group the entries by type
 
 const Daily = () => {
-  const { entries } = useDaily();
+  // const { entries } = useDaily();
 
   // TODO
-  // Add hook to pull entries from db into entries object
+  // Organize entries in different ways?
 
+  const res = useFetch(`http://localhost:3000/rapid`);
+  const data = res.data;
 
+  let entries = [];
+
+  for (let j = 0; j < data.length; j++) {
+    if (data[j].entry) {
+      entries.push(
+        <Entry key={j} entry={data[j].entry} date={data[j].date } />
+      )
+    }
+  }
 
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="entry-list">
         <h2>Your journal logs from today.</h2>
-        <EntryList entries={entries} />
+        {entries}
       </div>
     </div>
   );

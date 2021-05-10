@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 const useDaily = (cb) => {
   const [ entries, setEntries ] = useState({ entries: {} });
+  const [ query, setQuery ] = useState('');
+
+  // const { status, entries } = useFetch(url);
 
   return {
     entries,
   };
 };
 
-const useFetch = (url) => {
+const useFetch = (url, options) => {
   const [status, setStatus] = useState('idle');
   const [data, setData] = useState([]);
 
@@ -16,7 +19,7 @@ const useFetch = (url) => {
     if (!url) return;
     const fetchData = async() => {
       setStatus('fetching');
-      const response = await fetch(url);
+      const response = await fetch(url, options);
       const data = await response.json();
       setData(data);
       setStatus('fetched');
