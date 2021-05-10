@@ -6,6 +6,7 @@ import { useRapid } from '../helpers/customHooks.js';
 // Add type
 // Add keywords
 // Add keyboard shortcuts for type
+// Fix timezone offset
 
 const RapidLog = () => {
   const { inputs, handleInputChange, handleSubmit } = useRapid();

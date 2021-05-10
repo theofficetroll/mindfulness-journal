@@ -10,7 +10,6 @@ const Daily = () => {
 
   // TODO
   // Organize entries in different ways?
-  // Only show entries timestamped today
 
   const res = useFetch(`http://localhost:3000/daily`);
   const data = res.data;
