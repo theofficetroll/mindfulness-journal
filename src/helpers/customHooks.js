@@ -35,7 +35,9 @@ const useRapid = (cb) => {
     if(e) {
       e.preventDefault();
     }
-    // TODO generalize posting function
+
+    // TODO update to useFetch
+
     fetch(`http://localhost:3000/rapid`, {
       method: 'POST',
       headers: {
