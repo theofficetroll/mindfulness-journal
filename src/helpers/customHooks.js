@@ -79,8 +79,14 @@ const useRapid = (cb) => {
   };
 }
 
+const useContextMenu = (cb) => {
+  // TODO
+  // Everything
+}
+
 export {
   useRapid,
   useDaily,
   useFetch,
+  useContextMenu,
 };
