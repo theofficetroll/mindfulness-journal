@@ -8,6 +8,13 @@ import { useRapid } from '../helpers/customHooks.js';
 // Add keyboard shortcuts for type
 // Fix timezone offset
 
+/*
+Types:
+  Tasks
+  Events
+  Note (default)
+*/
+
 const RapidLog = () => {
   const { inputs, handleInputChange, handleSubmit } = useRapid();
 
@@ -19,6 +26,11 @@ const RapidLog = () => {
           <div>
             <label>Rapid Log Entry</label>
             <input type='text' name='entry' onChange={handleInputChange} value={inputs.entry} required />
+            <select onChange={handleInputChange} value={inputs.type}>
+              <option value='note'>- Note</option>
+              <option value='task'>* Task</option>
+              <option value='event'>o Event</option>
+            </select>
             <button type='submit'>Done</button>
           </div>
         </form>

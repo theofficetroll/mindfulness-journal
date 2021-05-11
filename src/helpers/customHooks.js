@@ -56,7 +56,7 @@ const useRapid = (cb) => {
       return res;
     })
     .then(data => {
-      setInputs(inputs => ({ entry: '' }));
+      setInputs(inputs => ({ entry: '', type: 'note' }));
     })
     .catch(error => {
       console.log('Error received', error);
@@ -69,7 +69,7 @@ const useRapid = (cb) => {
   const handleInputChange = (e) => {
     e.persist();
     let currentDate = new Date();
-    setInputs((inputs) => ({...inputs, [e.target.name]: e.target.value, date: currentDate}));
+    setInputs((inputs) => ({ ...inputs, [e.target.name]: e.target.value, date: currentDate, type: e.target.type }));
   }
 
   return {
