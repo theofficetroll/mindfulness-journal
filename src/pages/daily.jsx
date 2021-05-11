@@ -14,6 +14,8 @@ const Daily = () => {
   const res = useFetch(`http://localhost:3000/daily`);
   const data = res.data;
 
+  console.log('dailies recovered', data);
+
   // Today's date
   const time = new Date();
   const month = time.getMonth() + 1;
@@ -32,9 +34,8 @@ const Daily = () => {
       } else {
         timeStamp = '';
       }
-      // timeStamp = dateStamp.slice(9, 14);
       entries.push(
-        <Entry key={j} entry={data[j].entry} time={timeStamp} />
+        <Entry key={j} entry={data[j].entry} time={timeStamp} entryType={data[j].entryType}/>
       )
     }
   }

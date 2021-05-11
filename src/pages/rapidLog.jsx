@@ -26,10 +26,10 @@ const RapidLog = () => {
           <div>
             <label>Rapid Log Entry</label>
             <input type='text' name='entry' onChange={handleInputChange} value={inputs.entry} required />
-            <select onChange={handleInputChange} value={inputs.type}>
-              <option value='note'>- Note</option>
-              <option value='task'>* Task</option>
-              <option value='event'>o Event</option>
+            <select name='entryType' onChange={handleInputChange} value={inputs.entryType}>
+              <option value='-'>- Note</option>
+              <option value='*'>* Task</option>
+              <option value='o'>o Event</option>
             </select>
             <button type='submit'>Done</button>
           </div>

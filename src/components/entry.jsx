@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Entry = ({ entry, time }) => {
+const Entry = ({ entry, time, entryType }) => {
 
   return (
     <div className='entry'>
-      {time} : {entry}
+      {entryType} {time} : {entry}
     </div>
   )
 }

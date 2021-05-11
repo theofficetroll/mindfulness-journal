@@ -32,7 +32,7 @@ const useFetch = (url, options) => {
 }
 
 const useRapid = (cb) => {
-  const [ inputs, setInputs ] = useState({ entry: '' });
+  const [ inputs, setInputs ] = useState({ entry: '', entryType: '-' });
 
   const handleSubmit = (e) => {
     if(e) {
@@ -52,11 +52,11 @@ const useRapid = (cb) => {
       if (!res.ok) {
         throw new Error('Network response was not ok');
       }
-      console.log('Entry added!');
+      console.log('Entry added!', inputs);
       return res;
     })
     .then(data => {
-      setInputs(inputs => ({ entry: '', type: 'note' }));
+      setInputs(inputs => ({ entry: '', entryType: '-' }));
     })
     .catch(error => {
       console.log('Error received', error);
@@ -69,7 +69,7 @@ const useRapid = (cb) => {
   const handleInputChange = (e) => {
     e.persist();
     let currentDate = new Date();
-    setInputs((inputs) => ({ ...inputs, [e.target.name]: e.target.value, date: currentDate, type: e.target.type }));
+    setInputs((inputs) => ({ ...inputs, [e.target.name]: e.target.value, date: currentDate }));
   }
 
   return {

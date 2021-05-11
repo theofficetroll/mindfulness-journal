@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const entrySchema = new mongoose.Schema({
   entry: String,
   keywords: String,
-  type: String,
+  entryType: String,
   date: Date,
 });
 
