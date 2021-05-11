@@ -1,22 +1,18 @@
 import React from 'react';
 import Entry from '../components/entry.jsx';
 import Navbar from '../components/navbar.jsx';
-import { useDaily, useFetch } from '../helpers/customHooks.js';
+import { useFetch } from '../helpers/customHooks.js';
+
+// Overview
+// Pulls all open tasks with current or prior date
 
 // TODO
-// Consider if I want to group the entries by type
-// Add way to modify status of items
-  // Complete events & tasks
-  // Futureshift events & tasks
-  // Cancel events & tasks
-// Add a "last modified" or "completed" value to entries
-  // Datestamp entries when updating/ completing
+//
 
-
-const Daily = () => {
+const Migration = () => {
 
   // TODO
-  // Organize entries in different ways?
+  // Create new fetch and server controller for what is needed in This page
 
   const res = useFetch(`http://localhost:3000/daily`);
   const data = res.data;
@@ -58,4 +54,4 @@ const Daily = () => {
   );
 };
 
-export default Daily;
+export default Migration;

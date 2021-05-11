@@ -23,6 +23,11 @@ const Navbar = () => {
           Daily Log
         </span>
       </Link>
+      <Link className='navbar' to='/migration'>
+        <span className='migration link'>
+          Migration
+        </span>
+      </Link>
     </div>
   )
 }

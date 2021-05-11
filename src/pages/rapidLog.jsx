@@ -3,17 +3,10 @@ import Navbar from '../components/navbar.jsx';
 import { useRapid } from '../helpers/customHooks.js';
 
 // TODO
-// Add type
 // Add keywords
 // Add keyboard shortcuts for type
 // Fix timezone offset
 
-/*
-Types:
-  Tasks
-  Events
-  Note (default)
-*/
 
 const RapidLog = () => {
   const { inputs, handleInputChange, handleSubmit } = useRapid();

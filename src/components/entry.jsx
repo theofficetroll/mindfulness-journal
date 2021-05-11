@@ -1,5 +1,9 @@
 import React from 'react';
 
+// TODO
+// Add options to make updates to entries
+// Right click to make updates?
+
 const Entry = ({ entry, time, entryType }) => {
 
   return (
