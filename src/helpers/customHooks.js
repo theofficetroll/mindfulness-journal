@@ -63,9 +63,6 @@ const useRapid = (cb) => {
     })
   }
 
-  // TODO
-  // Consider changing date format to include timestamp
-
   const handleInputChange = (e) => {
     e.persist();
     let currentDate = new Date();
