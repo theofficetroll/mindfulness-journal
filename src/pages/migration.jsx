@@ -27,7 +27,7 @@ const Migration = () => {
     if (data[j].entry) {
       dateStamp = data[j].date;
       if(dateStamp) {
-        timeStamp = dateStamp.slice(11, 16);
+        timeStamp = dateStamp.slice(5, 10) + ' ' + dateStamp.slice(11, 16);
       } else {
         timeStamp = '';
       }
@@ -41,7 +41,7 @@ const Migration = () => {
     <div>
       <Navbar />
       <div className="entry-list">
-        <h2>Your journal logs from today, {date}.</h2>
+        <h2>Your journal logs ready to be migrated.</h2>
         {entries}
       </div>
     </div>
