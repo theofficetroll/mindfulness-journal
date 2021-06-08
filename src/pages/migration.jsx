@@ -11,7 +11,7 @@ import { useFetch } from '../helpers/customHooks.js';
 
 const Migration = () => {
 
-  const res = useFetch(`http://localhost:3000/daily`);
+  const res = useFetch(`http://localhost:3000/migration`);
   const data = res.data;
 
   console.log('dailies recovered', data);

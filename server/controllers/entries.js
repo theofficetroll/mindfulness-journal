@@ -3,7 +3,28 @@ const Entry = require('../../db/models/entries.js');
 const endOfDay = require('date-fns/endOfDay');
 const startOfDay = require('date-fns/startOfDay');
 
+// TODO
+// getMigration:
+//   Pull from all previous dates
+//   Only pull open items (events, tasks)
+
 exports.getDaily = (req, res) => {
+  Entry.find({
+    date: {
+      $gte: startOfDay(new Date()),
+      $lte: endOfDay(new Date())
+    }
+  })
+  .then(result => {
+    res.status(200).send(result);
+  })
+  .catch(err => {
+    console.log('error retrieving entry data');
+    res.status(500).send(err);
+  })
+}
+
+exports.getMigration = (req, res) => {
   Entry.find({
     date: {
       $gte: startOfDay(new Date()),
