@@ -6,9 +6,6 @@ import { useFetch } from '../helpers/customHooks.js';
 // Overview
 // Pulls all open tasks with current or prior date
 
-// TODO
-// Create new fetch and server controller for what is needed in This page
-
 const Migration = () => {
 
   const res = useFetch(`http://localhost:3000/migration`);

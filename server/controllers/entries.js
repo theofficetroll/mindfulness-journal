@@ -27,7 +27,7 @@ exports.getDaily = (req, res) => {
 exports.getMigration = (req, res) => {
   Entry.find({
     date: {
-      $gte: startOfDay(new Date()),
+      $gte: startOfDay(new Date(2021, 1, 1)),
       $lte: endOfDay(new Date())
     }
   })
