@@ -11,17 +11,13 @@ import { useDaily, useFetch } from '../helpers/customHooks.js';
   // Cancel events & tasks
 // Add a "last modified" or "completed" value to entries
   // Datestamp entries when updating/ completing
+// Organize entries in different ways?
 
 
 const Daily = () => {
 
-  // TODO
-  // Organize entries in different ways?
-
   const res = useFetch(`http://localhost:3000/daily`);
   const data = res.data;
-
-  console.log('dailies recovered', data);
 
   // Today's date
   const time = new Date();

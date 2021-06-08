@@ -6,6 +6,7 @@ const Home = () => {
     <div>
       <Navbar />
       <div>
+        <br />
         A journal app inspired by Bullet Journal methods.
       </div>
     </div>
