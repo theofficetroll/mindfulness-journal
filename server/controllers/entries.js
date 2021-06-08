@@ -29,7 +29,14 @@ exports.getMigration = (req, res) => {
     date: {
       $gte: startOfDay(new Date(2021, 1, 1)),
       $lte: endOfDay(new Date())
-    }
+    },
+    $or: [{
+      entryType: 'o'
+    },
+    {
+      entryType: '*'
+    },
+    ]
   })
   .then(result => {
     res.status(200).send(result);
