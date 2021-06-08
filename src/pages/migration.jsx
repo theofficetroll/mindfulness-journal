@@ -6,6 +6,16 @@ import { useFetch } from '../helpers/customHooks.js';
 // Overview
 // Pulls all open tasks with current or prior date
 
+// TODO
+// Add checkboxen for items to be migrated
+// Add buttons for types of migration:
+//   Cancel
+//   Next Day
+//   Date of Choice
+//   Add to Routine - Routine not yet implemented
+//   Week of Choice - WoC not yet implemented
+//   Month of Choice - MoC not yet implemented
+
 const Migration = () => {
 
   const res = useFetch(`http://localhost:3000/migration`);
