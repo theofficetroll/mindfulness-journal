@@ -76,9 +76,10 @@ const useRapid = (cb) => {
   };
 }
 
-const useContextMenu = (cb) => {
+const useContextMenu = (e) => {
+  e.preventDefault();
   // TODO
-  // Everything
+  // everything
 }
 
 export {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useContextMenu } from '../helpers/customHooks.js';
 
 // TODO
 // Add options to make updates to entries
@@ -7,7 +8,7 @@ import React from 'react';
 const Entry = ({ entry, time, entryType }) => {
 
   return (
-    <div className='entry'>
+    <div className='entry' onContextMenu={useContextMenu}>
       {entryType} {time} : {entry}
     </div>
   )
